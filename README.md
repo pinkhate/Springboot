@@ -44,4 +44,16 @@ server.port=xxx
 springboot默认只会加载application.yml文件
 
 ```
+6.profile
+
+```
+基于条件注解实现一键切换
+格式 application-{profile}.properties
+在application.properties中指定哪一个配置文件生效
+
+在生产环境下切换配置文件，实际上后面跟着的就是application.properties文件里面的内容 想要更改什么就在后面添加就行
+java -jar profile-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod --server.port=xxx
+
+```
+
 
