@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TomcatApplication {
 
-    //tomcat配置
+    //tomcat配置1
     public static void main(String[] args) {
         SpringApplication.run(TomcatApplication.class, args);
     }
