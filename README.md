@@ -39,6 +39,9 @@ server.port=xxx
 5.yaml配置
 
 ```
+1.properties配置底层是properties继承自hashtable是无序的
+2.yaml配置底层是linkedhashmap()是有序的 通过snakeyml加载 @PropertySource注解不能加载yml配置文件
+springboot默认只会加载application.yml文件
 
 ```
 
