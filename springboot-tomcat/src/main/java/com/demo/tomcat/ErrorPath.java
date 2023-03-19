@@ -14,6 +14,7 @@ public class ErrorPath {
     public String getErrorPage(){
         System.out.println("hello");
 //        return "/error.html";
+        //测试
         return "ssss";
     }
 }
