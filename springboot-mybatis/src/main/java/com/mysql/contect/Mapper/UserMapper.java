@@ -14,4 +14,6 @@ import java.util.List;
 @Component
 public interface UserMapper {
     List<User> getAllUsers();
+
+    void addUser(User user);
 }

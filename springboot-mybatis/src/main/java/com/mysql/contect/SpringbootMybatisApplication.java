@@ -5,6 +5,9 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * springboot整合easyui实现excel表的导入导出
+ */
 @SpringBootApplication
 @MapperScan(basePackages = "com.mysql.contect.Mapper")
 public class SpringbootMybatisApplication {
