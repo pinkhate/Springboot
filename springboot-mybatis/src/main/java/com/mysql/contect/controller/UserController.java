@@ -5,6 +5,7 @@ import com.mysql.contect.excel.JobLevelAnalysisListener;
 import com.mysql.contect.model.User;
 import com.mysql.contect.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,12 +21,23 @@ import java.util.List;
  * @author ZL
  * @creatTime 2023-03-22
  */
-
+@CrossOrigin
 @RestController
 public class UserController {
 
     @Autowired
     UserService userService;
+
+    @GetMapping("/user")
+    public User getUser(){
+        User user = new User();
+        user.setName("zhangsan");
+        user.setPwd("123");
+        user.setRole("管理员");
+        return user;
+    }
+
+
 
     @GetMapping("/export")
     public void exportExcel(HttpServletRequest req, HttpServletResponse resp) throws IOException {
