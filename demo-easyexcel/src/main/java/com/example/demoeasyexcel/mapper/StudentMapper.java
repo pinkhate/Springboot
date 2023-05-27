@@ -10,7 +10,6 @@ import java.util.List;
  * @author ZL
  * @creatTime 2023-05-24
  */
-@Mapper
 public interface StudentMapper {
     List<Student> getAllStudentList();
 }
