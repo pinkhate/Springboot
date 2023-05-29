@@ -3,12 +3,15 @@ package com.example.demoeasyexcel;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.read.builder.ExcelReaderBuilder;
 import com.alibaba.excel.read.builder.ExcelReaderSheetBuilder;
+import com.alibaba.excel.write.builder.ExcelWriterBuilder;
+import com.alibaba.excel.write.builder.ExcelWriterSheetBuilder;
 import com.example.demoeasyexcel.entity.Student;
 import com.example.demoeasyexcel.listener.StudentListener;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.File;
+import java.util.ArrayList;
 
 @SpringBootTest
 class DemoEasyexcelApplicationTests {
@@ -16,8 +19,6 @@ class DemoEasyexcelApplicationTests {
     @Test
     void contextLoads() {
     }
-
-
 
     @Test
     public void testo1(){
@@ -38,14 +39,24 @@ class DemoEasyexcelApplicationTests {
         //读取工作表中的内容
         sheet.doRead();
 
-
     }
 
     @Test
     public void test02(){
 
+        ArrayList<Object> array = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
 
-
+            Student student = new Student();
+            student.setSno("1");
+            student.setName("张坤");
+            student.setAge(18);
+            student.setMajor("战士");
+            array.add(student);
+        }
+        ExcelWriterBuilder write = EasyExcel.write("student-write.xlsx", Student.class);
+        ExcelWriterSheetBuilder sheet = write.sheet("write");
+        sheet.doWrite(array);
     }
 
 }
